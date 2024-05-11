@@ -283,6 +283,7 @@ fn subclassable() {
             impl ObjectImpl for Foo {}
         }
 
+        #[allow(dead_code)]
         pub trait FooExt: IsA<Foo> + 'static {
             fn test(&self) {
                 let _self = self.as_ref().downcast_ref::<Foo>().unwrap().imp();
